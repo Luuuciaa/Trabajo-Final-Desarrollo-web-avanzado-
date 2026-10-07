@@ -36,10 +36,11 @@ body {
      }
 
 nav{
-   
-    padding: 40px;
+    padding: 20px;
     
 }
+
+
 nav ul{
     display: flex;
     gap:40px;
@@ -52,17 +53,31 @@ nav a {
     font-size: 10px;
     color: var(--color-secundario);
      font-family: "JetBrains Mono", monospace;
-     
+    transition: transform 1s ease;
+    display: inline-block;
 }
 nav a:hover {
   color: var(--color-primario);
   background-color:var(--color-contenedor-bajo);
   padding: 5px;
+    transform: translateY(-1px);
 }
 
 /****************INICIO***********/
+.inicio{
+     min-height: 100vh;
+    background-image:  linear-gradient(rgba(1, 18, 48, 0.55), rgba(1, 12, 27, 0.85)),
+    url(/imagenes/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
+}
 .texto-principal{
+    margin-top: 80px;
     font-size: 50px;
+    font-weight: 800;
     
 }
 .textos-inicio{
@@ -72,7 +87,7 @@ nav a:hover {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 40px;
 
 }
  .tarjeta1,
@@ -145,6 +160,7 @@ nav a:hover {
 
 
 .historia{
+        min-height: 100vh;
      background-image:
          linear-gradient(rgba(1, 18, 48, 0.55), rgba(1, 12, 27, 0.85)),
         url("../imagenes/historia-programacion.jpg");
@@ -155,9 +171,10 @@ nav a:hover {
     width: 100%;
     height: 700px;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 
 }
@@ -165,12 +182,14 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     gap: 60px;
-    width: 90%;
+    width: 60%;
     margin: 25px auto;
     padding: 40px 0;
     
 
 }
+
+
 .tarjeta3 , 
 .tarjeta4 , 
 .tarjeta5{
@@ -178,26 +197,37 @@ nav a:hover {
     padding: 30px;
     box-shadow: 0 0 0 0.2px  var(--color-secundario);
      transition: border-color 0.3s, box-shadow 0.3s;
+     display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    flex: 1;
 }
+
 .contenedor-tarjeta img{
- width: 350px;
- height: 250px;
+  width: 350px;
+    height: 250px;
+    object-fit: cover;
+    
+    
 }
 .contenedor-tarjeta h2 {
     color: var(--color-primario);
    font-size: 20px;
+   margin-bottom: 20px;
 }
 .contenedor-tarjeta p {
  color: var(--color-secundario);
  line-height: 1.8;
- width: 48%;
+ width: 100%;
  font-size: 10px;
  margin-top: 2px;
 
 }
+
 .texto-historia{
     font-size: 35px;
     text-align: center;
+    margin-top:220px;
     
 }
 #video{
