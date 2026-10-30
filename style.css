@@ -41,7 +41,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    transition: background-color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease,
+        opacity 0.4s ease;
 }
 
 
@@ -62,6 +66,7 @@ nav ul a {
     transition: color 0.4s ease, background-color 0.4s ease, transform 0.4s ease;
     display: inline-block;
     font-weight: 600;
+    position: relative;
 }
 
 nav ul a:hover {
@@ -70,6 +75,30 @@ nav ul a:hover {
     padding: 8px;
     transform: translateY(-3px);
 
+}
+
+/*Cuando se hace srcoll en la página*/
+nav.cambioNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    background-color: var(--color-superficie);
+    box-shadow: 0 4px 6px -4px var(--color-primario);
+}
+
+/* Línea debajo de la página actual */
+nav ul a.subrayado::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primario);
+    border-radius: 2px;
 }
 
 /* Computadora */
@@ -199,7 +228,7 @@ nav ul a:hover {
 /***************HISTORIA************/
 
 
-.historia {
+.historia ,.jueguemos {
     min-height: 100vh;
     background-image:
         linear-gradient(rgba(1, 18, 48, 0.55), rgba(1, 12, 27, 0.85)),
@@ -269,7 +298,7 @@ nav ul a:hover {
 
 }
 
-.texto-historia {
+.texto-historia , .texto-jueguemos {
     font-size: 55px;
     text-align: center;
     margin-top: 300px;
@@ -374,7 +403,209 @@ article {
     background-color: var(--color-primario);
 
 }
+/********jJUEGUEMOS**********/
 
+.jueguemos {
+     background-image:
+        linear-gradient(rgba(1, 18, 48, 0.55), rgba(1, 12, 27, 0.85)),
+        url("../imagenes/img2.jpg");
+}
+.texto1-jueguemos{
+    text-align: center;
+    font-size: 25px;
+}
+
+.texto1-jueguemos h2 {
+    color: var(--color-secundario);
+    font-size: 35px;
+    margin-bottom: 60px;
+    margin-top: 90px;
+}
+
+/* Contenedor general */
+.contenedor-rompecabezas {
+    display: grid;
+    grid-template-columns: 200px auto 200px;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-items: center;
+    gap: 50px 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+/* Las piezas se acomodan en el grid principal */
+.piezas {
+    display: contents;
+}
+
+/* Tablero central */
+.tablero {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    gap: 24px;
+}
+
+/* Espacios para soltar las piezas */
+.casilla {
+     width: 200px;
+    height: 350px;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: var(--color-contenedor);
+    border: 2px dashed var(--color-superficie-variante);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secundario);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    text-align: center;
+    
+}
+.casilla:hover{
+   background-color: var(--color-superficie-variante);
+    border-color: var(--color-primario);
+    color: var(--color-primario);
+    box-shadow: 0 0 12px rgba(0, 242, 255, 0.25);
+    transition: 0.3s;
+}
+/* Imágenes de las piezas */
+.tarjeta-pieza {
+    width: 200px;
+    height: 350px;
+    cursor: grab;
+}
+
+.tarjeta-pieza img {
+       width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: grab;
+}
+/* Tamaño de las imágenes al soltarlas en las casillas */
+.casilla img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: fill;
+    display: block;
+}
+
+/* Primera imagen: izquierda */
+#pieza-izquierda {
+    grid-column: 1;
+    grid-row: 1;
+    transform: rotate(8deg);
+}
+
+/* Segunda imagen: derecha */
+#pieza-derecha {
+    grid-column: 3;
+    grid-row: 1;
+    transform: rotate(-13deg);
+}
+
+/* Tercera imagen: abajo */
+#pieza-abajo {
+    grid-column: 2;
+    grid-row: 2;
+    transform: rotate(93deg);
+     margin-top: -30px;
+}
+
+#reiniciar{
+ background-color: transparent;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    padding: 12px 40px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    margin: 30px auto 80px;
+
+}
+  /* Efecto al pasar el mouse */
+#reiniciar:hover {
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    box-shadow: 0 0 15px var(--color-primario);
+}
+.titulo-oculto,
+.tablero-oculto {
+    animation: desaparecerPuzzle 0.8s ease forwards;
+}
+
+@keyframes desaparecerPuzzle {
+    to {
+        opacity: 0;
+        transform: scale(0.7);
+        visibility: hidden;
+    }
+}
+
+/* Mensaje de felicitaciones */
+#mensaje-felicitaciones {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(100px);
+    pointer-events: none;
+}
+
+/* El mensaje sube y aparece */
+#mensaje-felicitaciones.mensaje-visible {
+    animation: aparecerMensaje 1s ease forwards;
+}
+
+@keyframes aparecerMensaje {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-550px);
+    }
+}
+
+/* Colores de los mensajes */
+#mensaje-felicitaciones.mensaje-correcto {
+    color: var(--color-secundario);
+}
+
+#mensaje-felicitaciones.mensaje-error {
+    color:var(--color-primario);
+    font-size: 37px;
+}
+/* Oscurecer un poco la imagen */
+.imagen-oscura {
+    filter: brightness(50%);
+    transition: filter 0.5s ease;
+}
+.tablero {
+    transition: column-gap 0.8s ease;
+}
+
+.tablero.puzzle-correcto {
+    column-gap: 0;
+}
+
+.tablero.puzzle-correcto .casilla {
+    border: none;
+    background-color: transparent;
+    pointer-events: none;
+}
 .dia-noche {
     display: flex;
     justify-content: end;
@@ -390,7 +621,7 @@ article {
     width: 50px;
 }
 
-.sol {
+.luna {
     border: 1px solid var(--color-primario);
     padding: 10px;
 }
@@ -419,4 +650,119 @@ footer h3 {
 footer p {
     margin-left: 700px;
     font-size: 15px;
+}
+
+/*******ANIMACIONES DEL PÁGINA DE INICIO*******/
+
+/* La tarjeta 1 aparece desde la izquierda */
+.tarjeta1  {
+    animation: desdeIzquierda 1.2s ease;
+}
+
+/* La tarjeta 2 aparece desde la derecha */
+.tarjeta2 {
+    animation: desdeDerecha 1.2s ease;
+}
+
+/* Movimiento desde la izquierda */
+@keyframes desdeIzquierda {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Movimiento desde la derecha */
+@keyframes desdeDerecha {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+svg{
+  margin-left: 30px;
+}
+/* Borde exterior del monitor */
+.logo svg .borde-monitor {
+    opacity: 0;
+    animation: acomodarPieza 1.5s ease 0s forwards;
+}
+
+/* Borde interior */
+.logo svg .borde-interior {
+    opacity: 0;
+    animation: acomodarPieza 1.5s ease 0.3s forwards;
+}
+
+/* Soporte del monitor */
+.logo svg .soporte {
+    opacity: 0;
+    animation: acomodarPieza 1.5s ease 0.6s forwards;
+}
+
+/* Base del monitor */
+.logo svg .base {
+    opacity: 0;
+    animation: acomodarPieza 1.5s ease 0.9s forwards;
+}
+
+/* Líneas de código al final */
+.logo svg .codigo {
+    opacity: 0;
+    animation: acomodarPieza 1.5s ease 1.2s forwards;
+}
+
+/* Las piezas bajan y se acomodan */
+@keyframes acomodarPieza {
+    from {
+        opacity: 0;
+        transform: translateY(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*******ANIMACIONES DEL PÁGINA DE HISTORIA*******/
+
+
+/* Imagen y texto comienzan fuera de su posición */
+.tarjeta3 img,
+.tarjeta4 img,
+.tarjeta5 img {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.tarjeta3 .contenido-tarjeta,
+.tarjeta4 .contenido-tarjeta,
+.tarjeta5 .contenido-tarjeta {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+/* Cuando la tarjeta aparece al hacer scroll */
+.tarjeta3.aparecer img,
+.tarjeta4.aparecer img,
+.tarjeta5.aparecer img,
+.tarjeta3.aparecer .contenido-tarjeta,
+.tarjeta4.aparecer .contenido-tarjeta,
+.tarjeta5.aparecer .contenido-tarjeta {
+    opacity: 1;
+    transform: translateX(0);
 }

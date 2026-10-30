@@ -14,8 +14,8 @@ const transformarTiempo = (tiempo) => {
     if (tiempo > 60) {
         minutos = parseInt(tiempo / 60);
         segundos = parseInt(tiempo % 60);
-        
-    // Si el tiempo es menor o igual a 60 segundos
+
+        // Si el tiempo es menor o igual a 60 segundos
     } else {
         minutos = 0;
         segundos = parseInt(tiempo);
@@ -47,9 +47,9 @@ play.addEventListener("click", () => {
         // Obtenemos el tiempo actual del video y lo transformamos al formato 00:00
         let tiempo = transformarTiempo(video.currentTime);
         document.querySelector("#duracion-actual").textContent = tiempo;
-        let progresoActual =parseInt((video.currentTime /video.duration) * 100); //porcentaje del avance del video
+        let progresoActual = parseInt((video.currentTime / video.duration) * 100); //porcentaje del avance del video
         document.querySelector(".progreso").style.width = `${progresoActual}%`// Cambiamos el ancho de la barra de progreso según el porcentaje
-        
+
 
     }, 1000);
 });
@@ -60,4 +60,7 @@ pause.addEventListener("click", () => {
     // Detenemos el intervalo que estaba mostrando  el tiempo actual
     clearInterval(muestraTiempoActual)
 });
+
+
+
 

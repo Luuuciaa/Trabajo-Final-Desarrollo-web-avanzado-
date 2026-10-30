@@ -10,69 +10,109 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <svg width="120" height="110" viewBox="0 0 100 80">
+    <div class="jueguemos">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">
+                    <svg width="120" height="110" viewBox="0 0 100 80">
 
-                    <!-- Borde del monitor -->
-                    <rect x="15" y="5" width="70" height="47" fill="none" stroke="#00f2ff" stroke-width="2" />
+                        <!-- Borde del monitor -->
+                        <rect class="borde-monitor" x="15" y="5" width="70" height="47" fill="none" stroke="#00f2ff"
+                            stroke-width="2" />
 
-                    <!-- Borde interior -->
-                    <rect x="19" y="9" width="62" height="39" fill="none" stroke="#00f2ff" stroke-width="1.5" />
+                        <!-- Borde interior -->
+                        <rect class="borde-interior" x="19" y="9" width="62" height="39" fill="none" stroke="#00f2ff"
+                            stroke-width="1.5" />
 
-                    <!-- Líneas que simulan código -->
-                    <line x1="24" y1="18" x2="55" y2="18" stroke="#00f2ff" stroke-width="3" />
+                        <!-- Líneas que simulan código -->
+                        <line class="codigo" x1="24" y1="18" x2="55" y2="18" stroke="#00f2ff" stroke-width="3" />
 
-                    <line x1="24" y1="24" x2="45" y2="24" stroke="#00f2ff" stroke-width="3" />
+                        <line class="codigo" x1="24" y1="24" x2="45" y2="24" stroke="#00f2ff" stroke-width="3" />
 
-                    <line x1="24" y1="31" x2="75" y2="31" stroke="#00f2ff" stroke-width="3" />
+                        <line class="codigo" x1="24" y1="31" x2="75" y2="31" stroke="#00f2ff" stroke-width="3" />
 
-                    <line x1="24" y1="37" x2="75" y2="37" stroke="#00f2ff" stroke-width="3" />
+                        <line class="codigo" x1="24" y1="37" x2="75" y2="37" stroke="#00f2ff" stroke-width="3" />
 
-                    <!-- Soporte del monitor -->
-                    <line x1="43" y1="52" x2="43" y2="64" stroke="#00f2ff" stroke-width="1.5" />
+                        <!-- Soporte del monitor -->
+                        <line class="soporte" x1="43" y1="52" x2="43" y2="64" stroke="#00f2ff" stroke-width="1.5" />
 
-                    <line x1="58" y1="52" x2="58" y2="64" stroke="#00f2ff" stroke-width="1.5" />
+                        <line class="soporte" x1="58" y1="52" x2="58" y2="64" stroke="#00f2ff" stroke-width="1.5" />
 
-                    <line x1="43" y1="64" x2="58" y2="64" stroke="#00f2ff" stroke-width="1.5" />
+                        <line class="soporte" x1="43" y1="64" x2="58" y2="64" stroke="#00f2ff" stroke-width="1.5" />
 
-                    <!-- Base del monitor -->
-                    <line x1="43" y1="64" x2="18" y2="74" stroke="#00f2ff" stroke-width="2" />
+                        <!-- Base del monitor -->
+                        <line class="base" x1="43" y1="64" x2="18" y2="74" stroke="#00f2ff" stroke-width="2" />
 
-                    <line x1="18" y1="74" x2="83" y2="74" stroke="#00f2ff" stroke-width="2" />
+                        <line class="base" x1="18" y1="74" x2="83" y2="74" stroke="#00f2ff" stroke-width="2" />
 
-                    <line x1="83" y1="74" x2="58" y2="64" stroke="#00f2ff" stroke-width="2" />
+                        <line class="base" x1="83" y1="74" x2="58" y2="64" stroke="#00f2ff" stroke-width="2" />
 
-                    <!-- Línea interior de la base -->
-                    <line x1="30" y1="70" x2="71" y2="70" stroke="#00f2ff" stroke-width="1.5" />
+                        <!-- Línea interior de la base -->
+                        <line class="base" x1="30" y1="70" x2="71" y2="70" stroke="#00f2ff" stroke-width="1.5" />
 
-                </svg>
+                    </svg>
 
-            </a>
+                </a>
 
-            <ul>
-                <li><a href="historia.html">HISTORIA</a></li>
-                <li><a href="jueguemos.html">JUEGUEMOS</a></li>
-            </ul>
-        </nav>
+                <ul>
+                    <li><a href="historia.html">HISTORIA</a></li>
+                    <li><a href="jueguemos.html" class="subrayado">JUEGUEMOS</a></li>
+                </ul>
+            </nav>
 
 
-    </header>
-
+        </header>
+        <h1 class="texto-jueguemos" id="titulo-rompecabezas" >JUEGUEMOS UN POCO</h1>
+    </div>
     <main>
-        <h1>JUGUEMOS UN POCO</h1>
-        <section>
-            <h2>Armemos el rompecabezas y veamos que imagen es...</h2>
-            <button>REINICIAR</button>
+        <section class="texto1-jueguemos">
+            <h2 id="titulo-rompecabezas">Armemos el rompecabezas y veamos que imagen es...</h2>
+
+
+            <div class="contenedor-rompecabezas">
+
+                <!-- Lugar donde se arma la imagen -->
+                <div class="tablero">
+                    <div class="casilla" id="casilla1">Arrastre y suelte la imagen aquí</div>
+                    <div class="casilla" id="casilla2">Arrastre y suelte la imagen aquí</div>
+                    <div class="casilla" id="casilla3">Arrastre y suelte la imagen aquí</div>
+                </div>
+
+                <!-- Piezas para arrastrar -->
+                <div class="piezas">
+                    <div class="tarjeta-pieza" id="pieza-izquierda">
+                        <img src="/imagenes/Rompe2.png" alt="Pieza 1" draggable="true" id="pieza1">
+                    </div>
+
+                    <div class="tarjeta-pieza " id="pieza-derecha">
+                        <img src="/imagenes/Rompe1.png" alt="Pieza 2" draggable="true" id="pieza2">
+                    </div>
+
+                    <div class="tarjeta-pieza" id="pieza-abajo">
+                        <img src="/imagenes/Rompe3.png" alt="Pieza 3" draggable="true" id="pieza3">
+                    </div>
+                </div>
+            </div>
+            
+               <p id="mensaje-felicitaciones"></p>
+            
+            <button id="reiniciar">REINICIAR</button>
         </section>
     </main>
 
-    <div class="dia-noche">
-        <img src="/iconos/sun.svg" alt="Blanco-Negro" class="sol">
+    
+     <div class="dia-noche">
+      <img src="/iconos/moon-stars.svg" alt="Cambiar Tema" class="luna" onclick="tema(this)" id="botonTema">
     </div>
 
 
@@ -82,6 +122,9 @@
         <p>Sitio con fines educativos - Creado por M.Victoria Lopez</p>
     </footer>
 
+    <script src="menu.js"></script>
+    <script src="jueguemos.js"></script>
+    <script src="tema.js"></script>
 
 </body>
 
