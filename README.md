@@ -64,10 +64,14 @@ JavaScript se utilizó para agregar interactividad y controlar diferentes elemen
 Trabajo-final/
 │
 ├── historia.html
+├── historia.js
 ├── index.html
 ├── jueguemos.html
+├──jueguemos.js
+├──menu.js
 ├── README.md
 ├── style.css
+├── tema.js
 ├── video.js
 │
 ├── iconos/
