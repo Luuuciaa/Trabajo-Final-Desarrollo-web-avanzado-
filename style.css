@@ -27,11 +27,11 @@ body {
     background-color: var(--color-fondo);
     font-family: "Hanken Grotesk", sans-serif;
     color: var(--color-secundario);
-
 }
 
+
 p {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Hanken Grotesk", sans-serif;
     font-size: 10px;
     margin-top: 18px;
 }
@@ -126,8 +126,7 @@ nav ul a.subrayado::after {
 .texto-principal {
     margin-top: 80px;
     font-size: 80px;
-    font-weight: 800;
-
+    font-family: "Montserrat", sans-serif
 }
 
 .textos-inicio {
@@ -228,7 +227,8 @@ nav ul a.subrayado::after {
 /***************HISTORIA************/
 
 
-.historia ,.jueguemos {
+.historia,
+.jueguemos {
     min-height: 100vh;
     background-image:
         linear-gradient(rgba(1, 18, 48, 0.55), rgba(1, 12, 27, 0.85)),
@@ -298,7 +298,8 @@ nav ul a.subrayado::after {
 
 }
 
-.texto-historia , .texto-jueguemos {
+.texto-historia,
+.texto-jueguemos {
     font-size: 55px;
     text-align: center;
     margin-top: 300px;
@@ -403,14 +404,16 @@ article {
     background-color: var(--color-primario);
 
 }
-/********jJUEGUEMOS**********/
+
+/********JUEGUEMOS**********/
 
 .jueguemos {
-     background-image:
+    background-image:
         linear-gradient(rgba(1, 18, 48, 0.55), rgba(1, 12, 27, 0.85)),
         url("../imagenes/img2.jpg");
 }
-.texto1-jueguemos{
+
+.texto1-jueguemos {
     text-align: center;
     font-size: 25px;
 }
@@ -433,6 +436,7 @@ article {
     max-width: 1100px;
     margin: 0 auto;
 }
+
 /* Las piezas se acomodan en el grid principal */
 .piezas {
     display: contents;
@@ -449,7 +453,7 @@ article {
 
 /* Espacios para soltar las piezas */
 .casilla {
-     width: 200px;
+    width: 200px;
     height: 350px;
     padding: 0;
     box-sizing: border-box;
@@ -463,15 +467,17 @@ article {
     font-family: "JetBrains Mono", monospace;
     font-size: 13px;
     text-align: center;
-    
+
 }
-.casilla:hover{
-   background-color: var(--color-superficie-variante);
+
+.casilla:hover {
+    background-color: var(--color-superficie-variante);
     border-color: var(--color-primario);
     color: var(--color-primario);
     box-shadow: 0 0 12px rgba(0, 242, 255, 0.25);
     transition: 0.3s;
 }
+
 /* Imágenes de las piezas */
 .tarjeta-pieza {
     width: 200px;
@@ -480,11 +486,12 @@ article {
 }
 
 .tarjeta-pieza img {
-       width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: contain;
     cursor: grab;
 }
+
 /* Tamaño de las imágenes al soltarlas en las casillas */
 .casilla img {
     width: 100%;
@@ -514,28 +521,29 @@ article {
     grid-column: 2;
     grid-row: 2;
     transform: rotate(93deg);
-     margin-top: -30px;
+    margin-top: -30px;
 }
 
-#reiniciar{
- background-color: transparent;
+#reiniciar {
+    background-color: transparent;
     color: var(--color-primario);
     border: 2px solid var(--color-primario);
     padding: 12px 40px;
     font-size: 15px;
-    font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
     display: block;
     margin: 30px auto 80px;
-
+    font-family: "Hanken Grotesk", sans-serif;
 }
-  /* Efecto al pasar el mouse */
+
+/* Efecto al pasar el mouse */
 #reiniciar:hover {
     background-color: var(--color-primario);
     color: var(--color-fondo);
     box-shadow: 0 0 15px var(--color-primario);
 }
+
 .titulo-oculto,
 .tablero-oculto {
     animation: desaparecerPuzzle 0.8s ease forwards;
@@ -585,14 +593,16 @@ article {
 }
 
 #mensaje-felicitaciones.mensaje-error {
-    color:var(--color-primario);
+    color: var(--color-primario);
     font-size: 37px;
 }
+
 /* Oscurecer un poco la imagen */
 .imagen-oscura {
     filter: brightness(50%);
     transition: filter 0.5s ease;
 }
+
 .tablero {
     transition: column-gap 0.8s ease;
 }
@@ -606,6 +616,8 @@ article {
     background-color: transparent;
     pointer-events: none;
 }
+
+/*Logo de dia-noche*/
 .dia-noche {
     display: flex;
     justify-content: end;
@@ -621,11 +633,21 @@ article {
     width: 50px;
 }
 
+.dia-noche img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--color-primario),
+        0 0 20px var(--color-primario),
+        0 0 35px var(--color-glow);
+    background-color: var(--color-superficie-variante);
+    transition: all 0.4s ease;
+}
+
 .luna {
     border: 1px solid var(--color-primario);
     padding: 10px;
 }
 
+/****PIE DE PÁGINA****/
 footer {
     display: flex;
     background-color: var(--color-superficie);
@@ -652,10 +674,10 @@ footer p {
     font-size: 15px;
 }
 
-/*******ANIMACIONES DEL PÁGINA DE INICIO*******/
+/*******ANIMACIONES DE LA PÁGINA DE INICIO*******/
 
 /* La tarjeta 1 aparece desde la izquierda */
-.tarjeta1  {
+.tarjeta1 {
     animation: desdeIzquierda 1.2s ease;
 }
 
@@ -689,10 +711,11 @@ footer p {
         transform: translateX(0);
     }
 }
-
-svg{
-  margin-left: 30px;
+/*Computadora*/
+svg {
+    margin-left: 30px;
 }
+
 /* Borde exterior del monitor */
 .logo svg .borde-monitor {
     opacity: 0;
@@ -765,4 +788,92 @@ svg{
 .tarjeta5.aparecer .contenido-tarjeta {
     opacity: 1;
     transform: translateX(0);
+}
+
+
+
+/************* MODO DÍA ******************/
+body:not(.noche) {
+
+    /* Color de fondo principal */
+    --color-fondo: #ffffff;
+
+    /* Color de superficie (paneles) */
+    --color-superficie: #00696F22;
+
+    /* Color de superficie variante */
+    --color-superficie-variante: #e2e8f0;
+
+    /* Color de contenedor */
+    --color-contenedor: #ffffff;
+
+    /* Color de contenedor bajo */
+    --color-contenedor-bajo: #00696F22;
+
+    /* Colores principales */
+    --color-primario: #00696f;
+    --color-secundario: #0c1424;
+
+    /* Sombras y brillo */
+    --color-sombra: rgba(0, 105, 111, 0.1);
+    --color-glow: rgba(0, 105, 111, 0.2);
+}
+
+
+
+
+/*Cuando se hace srcoll en la página*/
+body:not(.noche) nav.cambioNav {
+    background-color: var(--color-contenedor);
+    box-shadow: 0 4px 6px -4px var(--color-primario);
+
+}
+
+/* Interior del logo */
+body:not(.noche) .logo svg .borde-monitor,
+body:not(.noche) .logo svg .borde-interior,
+body:not(.noche) .logo svg .soporte,
+body:not(.noche) .logo svg .base {
+    fill: #ffffff;
+}
+
+/*Bordes del logo*/
+body:not(.noche) .logo svg .borde-monitor,
+body:not(.noche) .logo svg .borde-interior,
+body:not(.noche) .logo svg .soporte,
+body:not(.noche) .logo svg .base {
+    stroke: var(--color-primario);
+}
+
+
+/* Página de inicio */
+body:not(.noche) .inicio {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.68),
+            rgba(255, 255, 255, 0.75)),
+        url("/imagenes/fondo.jpg");
+}
+
+/* Página de historia */
+body:not(.noche) .historia {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.68),
+            rgba(255, 255, 255, 0.75)),
+        url("../imagenes/historia-programacion.jpg");
+
+    color: var(--color-secundario);
+}
+
+body:not(.noche) .duracion {
+    color: var(--color-primario);
+}
+
+/* Página de juegos */
+body:not(.noche) .jueguemos {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.68),
+            rgba(255, 255, 255, 0.75)),
+        url("../imagenes/img2.jpg");
+
+    color: var(--color-secundario);
 }
